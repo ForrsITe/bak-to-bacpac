@@ -19,7 +19,7 @@ $dockertempcreateimage = "$dockertempdir\create_docker_image.sh"
 # If you are on Windows and using WSL use the format /mnt/DRIVELETTER/Directory
 # If you are using Windows use DRIVELETTER:\PathtoDirectory
 
-$localDockerHostDirectory = 'F:\BackupShare'
+$localDockerHostDirectory = 'C:\BackupShare'
 
 #endregion
 
@@ -27,13 +27,13 @@ $localDockerHostDirectory = 'F:\BackupShare'
 
 # This is the name of the Azure Subscription
 
-$AzureSubscriptionName = ''
+$AzureSubscriptionName = 'FISC Gravity'
 
 # This is the name of the Resource Group - will be created if it does not exist
-$ResourceGroupName = 'sqlcontainers'
+$ResourceGroupName = 'sqlvarduakkyn7f4og'
 
 # The location in Azure in the northeurope format not North Europe
-$Location = 'northeurope'
+$Location = 'eastus'
 
 #This is the name of the storage account that the backups and bacpacs will be stored in
 # must be unique across Azure
@@ -44,14 +44,14 @@ $ShareName = 'baks'
 
 # This is the name of the Key Vault - It will be created if it does not exist and
 # must be unique across Azure
-$KVName = 'beardkvsqlcontainers1'
+$KVName = 'sqlvarduakkyn7f4ogkey'
 
 # This is the user who will have access to the Key Vault to set and retrieve secrets
-$UserForKeyVault = 'mrrobsewell_gmail.com#EXT#@mrrobsewellgmail.onmicrosoft.com'
+$UserForKeyVault = 'fisc.service.com#EXT#@outlook.com'
 
 # This is the name of the Azure Container Registry that will be created
 # must be unique across Azure
-$ACRName = 'beardacrsqlcontainers'
+$ACRName = 'regsqlvarduakkyn7f4og'
 
 # This is the name of the Key Vault secret that will hold the Storage Account SAS key
 $AcctKeySecretName = 'storage-acct-key'
@@ -63,14 +63,14 @@ $AcrUserSecretName = 'acr-pull-user'
 $AcrPassSecretName = 'acr-pull-pass'
 
 # This is the name of the Azure SQL Server. It will be created if it does not exist
-$SqlServerName = 'beardsqldbsfrombak'
+$SqlServerName = 'gravitysql2021'
 
 # This is the name of the Admin user for the Azure SQL Database
-$SqlAdminUser = 'sql-admin'
+$SqlAdminUser = 'GSQL_Admin'
 
 # This is the password for the admin user for the Azure SQL Database
 
-$SqlServerAdminPwdSecretName = "$SqlServerName-admin"
+$SqlServerAdminPwdSecretName = "FSabc01@#2021"
 
 $GetAzSecretParams = @{
     VaultName   = $KVName 
@@ -91,7 +91,7 @@ if(-not $SqlAdminCred){
 $ACRPath = 'sql/bak-bacpac:latest'
 
 # This is the local path where backups are stored for copying to the Azure File Share
-$onprembackupdirectory = 'F:\BackupShare'
+$onprembackupdirectory = 'C:\BackupShare'
 
 # This is the 'folder' path in the Azure Storage File Share for storing the backups
 $ShareFolderPath = '\'
